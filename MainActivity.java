@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private Sensor mAccelerometer;
     private Sensor mThermometer;
 
-    private float myTemp = 0;
-
     private long lastUpdate = 0;
     private float prevTemp = 0;
     private float lastX, lastY, lastZ;
@@ -98,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onSensorChanged(SensorEvent sensorEvent) {
         Sensor mSensor = sensorEvent.sensor;
         long currentTime;
-        
+
         switch(mSensor.getType()) {
             case Sensor.TYPE_ACCELEROMETER:
                 currentTime = System.currentTimeMillis();
